@@ -10,9 +10,9 @@ session_start();
 $db = mysqli_connect();
 if (isset($_SESSION['auth']) && isset($_GET['stem']) && is_numeric($_GET['stem']) && intval($_GET['stem']) >= 1 && intval($_GET['stem']) <= 5) {
 	$stem = change($_GET['stem']);
-	$identiteit = sha1($_SESSION['auth']['volledigenaam'] . $_SESSION['auth']['geboortedatum']);
+	$identiteit = sha1($seed . $_SESSION['auth']['volledigenaam'] . $_SESSION['auth']['geboortedatum']);
 	if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM mrstemmen WHERE Identiteit='$identiteit'")) == 0) {
-		mysqli_query($db, "INSERT INTO mrstemmen VALUES ('','$identiteit','" . $stem . "','" . microtime(true) . "')");
+		mysqli_query($db, "INSERT INTO mrstemmen VALUES ('','$identiteit'," . $stem . ")");
 	}
 }
 elseif (!isset($_GET['stem'])) {
