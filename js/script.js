@@ -24,6 +24,12 @@ var kandidaten = [{
 	klas: '4G',	
 }];
 
+$.ajaxSetup({
+  xhrFields: {
+    withCredentials: true
+  }
+});
+
 function shuffle(array) {
     var currentIndex = array.length,
         temporaryValue, randomIndex;
