@@ -1,0 +1,117 @@
+---
+layout: page
+---
+{% if site.online %}
+<div class="container" id="error">
+   <h1 class="header center red-text">Error</h1>
+   <br>
+   <br>
+   <h5 class="center">Er is iets fout gegaan. Probeer het op een later moment opnieuw.</h5>
+</div>
+<div class="container" id="start">
+   <h1 class="header center teal-text">{{ site.title }}</h1>
+   <div class="row center">
+      <h5 class="header col s12 light">{{ site.introductie }}</h5>
+   </div>
+   <div class="row center">
+      <a id="beginnen" class="btn-large waves-effect waves-light teal">Beginnen</a>
+   </div>
+   <br>
+   <br>
+</div>
+<div class="container" id="stemmen">
+   <h3 class="header center teal-text">Stem</h3>
+   <br>
+   <form class="center" action="#" id="stem">
+  </form>
+   <div class="row center">
+      <a id="klaar" class="btn-large waves-effect waves-light teal">Stem</a>
+   </div>
+   <br>
+   <br>
+</div>
+<div class="container" id="einde">
+   <h1 class="header center teal-text">Einde</h1>
+   <br>
+   <h5 class="center">{{ site.einde }}</h5>
+</div>
+<div class="container" id="magister">
+   <h2 class="header center teal-text"><i class="medium material-icons bottom">group</i> Magister</h2>
+   <div class="section magister">
+      <form class="col s12">
+         <div class="row">
+            <div class="input-field col s12">
+               <input id="username" type="text" class="validate">
+               <label for="username">Gebruikersnaam</label>
+            </div>
+            <div class="input-field col s12">
+               <input id="password" type="password" class="validate">
+               <label for="password">Wachtwoord</label>
+            </div>
+         </div>
+      </form>
+      <button class="btn waves-effect waves-light" id="login" type="submit" name="action">Inloggen
+      <i class="material-icons right">send</i>
+      </button>
+   </div>
+   <div class="magisterspinner">
+      <div class="col s12 m4 center">
+         <BR>
+         <BR>
+         <BR>
+         <BR>
+         <BR>
+         <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+            <div class="spinner-layer spinner-red">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+            <div class="spinner-layer spinner-yellow">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+            <div class="spinner-layer spinner-green">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% elsif site.gesloten %}
+{% include gesloten.html %}
+{% else %}
+{% include offline.html %}
+{% endif %}

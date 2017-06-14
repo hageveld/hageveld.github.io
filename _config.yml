@@ -1,0 +1,50 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Stemmen
+gesloten: false
+online: true
+
+introductie: Op deze pagina kan je stemmen op een nieuw MR-lid. Voordat je kan beginnen moet je eerst inloggen op Magister.
+storing: We ondervinden momenteel een storing. Kom op een later moment terug.
+geslotentekst: Je kunt niet meer stemmen.
+einde: Bedankt voor je stem!
+
+# Build settings
+gems:
+  - html-proofer
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - misc
+  - script
+  - Rakefile
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local]
+  blanklines: false
+
+# Be sure to exclude vendor from your  _config.yml
+# Travis bundles all gems in the vendor directory on its build servers, which Jekyll will mistakenly read and explode on.
+# https://jekyllrb.com/docs/continuous-integration/
