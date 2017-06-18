@@ -8,7 +8,10 @@ header('Access-Control-Allow-Credentials: true');
 date_default_timezone_set('Europe/Amsterdam');
 session_start();
 $db = mysqli_connect();
-if (isset($_SESSION['auth']) && isset($_GET['stem']) && is_numeric($_GET['stem']) && intval($_GET['stem']) >= 1 && intval($_GET['stem']) <= 5) {
+if (time() > strtotime('3 July 2017 18:00:00')) {
+	throw new Exception('Poging tot stemmen na de einddatum');
+}
+elseif (isset($_SESSION['auth']) && isset($_GET['stem']) && is_numeric($_GET['stem']) && intval($_GET['stem']) >= 1 && intval($_GET['stem']) <= 5) {
 	$stem = change($_GET['stem']);
 	$identiteit = sha1($seed . $_SESSION['auth']['volledigenaam'] . $_SESSION['auth']['geboortedatum']);
 	if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM mrstemmen WHERE Identiteit='$identiteit'")) == 0) {

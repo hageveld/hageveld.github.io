@@ -1,27 +1,18 @@
 var kandidaten = [{
 	id: 1,
 	naam: 'Bibi Wijs',
-	klas: '3D',
-},
-{
+},{
 	id: 2,
-	naam: 'Evelien van der Geest',
-	klas: '3D',
-},
-{
+	naam: 'Evelien van der Geest'
+},{
 	id: 3,
-	naam: 'Hannah Rakers',
-	klas: '3C',
-},
-{
+	naam: 'Hannah Rakers'
+},{
 	id: 4,
-	naam: 'Laura Mastwijk',
-	klas: '3B',
-},
-{
+	naam: 'Laura Mastwijk'
+},{
 	id: 5,
-	naam: 'Romy van Leeuwen',
-	klas: '4G',	
+	naam: 'Romy van Leeuwen'
 }];
 
 $.ajaxSetup({

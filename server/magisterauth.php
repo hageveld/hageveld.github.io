@@ -38,8 +38,9 @@ try {
 		}
 
 		$naam.= $persoon[0]['Persoon']['OfficieleAchternaam'];
+		
 		if (trim($naam) != "") {
-			if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM mrstemmen WHERE Identiteit='" . sha1($naam . $geboortedatum) . "'")) == 0) {
+			if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM mrstemmen WHERE Identiteit='" . sha1($seed . $naam . $geboortedatum) . "'")) == 0) {
 				$_SESSION['auth'] = array(
 					"success" => true,
 					"error" => false,
@@ -81,8 +82,16 @@ try {
 }
 
 catch(Exception $e) {
-	echo json_encode(array(
-		"success" => false,
-		"error" => true
-	));
+	if(stripos($e->getMessage,'JSON_ERROR_SYNTAX') !== false) {
+		echo json_encode(array(
+			"success" => false,
+			"error" => false
+		));
+	}
+	else {
+		echo json_encode(array(
+			"success" => false,
+			"errorr" => true
+		));
+	}
 }
