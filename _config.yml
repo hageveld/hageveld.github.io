@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Stemmen
-gesloten: false
+gesloten: true
 online: true
 
 introductie: Op deze pagina kan je stemmen op een nieuw LMR-lid. Voordat je kan stemmen moet je eerst inloggen op Magister.
